@@ -2,11 +2,11 @@
 
 ## Features
 
-- [ ] Create a self-contained Wiki from Markdown files.
+- [x] Create a self-contained Wiki from Markdown files.
   - [ ] Support for metadata from YAML front matter.
-  - [ ] Support for GitHub-Flavoured-Markdown.
+  - [x] Support for GitHub-Flavoured-Markdown.
 
-- [ ] Serve the Wiki as a static website.
+- [x] Serve the Wiki as a static website.
 
 - [ ] Use as a Github Action.
 
