@@ -366,16 +366,19 @@ func (s *Server) render(c echo.Context, file *KnownFile) error {
 	)
 
 	buf := bytes.Buffer{}
+
+	buf.WriteString("<div class=\"markdown-body\">\n")
 	if err := md.Convert(content, &buf); err != nil {
 		return c.JSON(500, map[string]interface{}{
 			"error": "failed to render markdown",
 			"file":  file.Path,
 		})
 	}
+	buf.WriteString("</div>\n")
 
-	buf.WriteString("<style>")
+	buf.WriteString("<style>body{margin:0}")
 	buf.WriteString(s.CSS)
-	buf.WriteString("</style>")
+	buf.WriteString(".markdown-body{padding:1em;min-height:100vh}</style>")
 
 	return c.HTMLBlob(200, buf.Bytes())
 }
@@ -412,7 +415,7 @@ func scanForKnownFiles(path string) {
 		}
 
 		// If it's a "_root.css" file, load it into the renderer
-		if filepath.Base(p) == "_root.css" {
+		if filepath.Base(p) == "_github.css" {
 			log.Info("Loading CSS", "path", p)
 
 			f, err := os.Open(p)
