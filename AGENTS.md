@@ -110,7 +110,7 @@ To add support for a new GFM feature (e.g., footnotes):
 1. Add parser in `internal/markdown/footnotes.go`
 2. Add renderer implementation
 3. Add tests in `internal/markdown/gfm_test.go`
-4. Update README § Features
+4. Update [HUMANS.md](./HUMANS.md) § Markdown Features if user-visible
 5. Commit: `feat: add GFM footnotes support`
 
 ### New CLI Command
@@ -121,7 +121,7 @@ To add a new command (e.g., `wiki2go validate`):
 2. Register command in main CLI setup
 3. Add help text and examples
 4. Add tests covering the command
-5. Update README § Usage
+5. Update [HUMANS.md](./HUMANS.md) § Usage if user-facing
 6. Commit: `feat: add validate command for wiki integrity checking`
 
 ### Wiki Configuration
@@ -133,7 +133,7 @@ To add config file support (e.g., `wiki.yaml`):
 3. Merge with CLI flags (CLI takes precedence)
 4. Update wiki generation to use config
 5. Add config parsing tests
-6. Update README § Configuration
+6. Update [HUMANS.md](./HUMANS.md) § Configuration if user-facing
 7. Commit: `feat: add wiki.yaml configuration file support`
 
 ## Dependency Management
