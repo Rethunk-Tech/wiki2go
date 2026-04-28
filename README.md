@@ -1,43 +1,22 @@
 # Wiki2go
 
-## Features
+A Go CLI tool for creating self-contained wikis from Markdown files with GitHub-Flavored Markdown support and static website serving.
 
-- [x] Create a self-contained Wiki from Markdown files.
-  - [ ] Support for metadata from YAML front matter.
-  - [x] Support for GitHub-Flavoured-Markdown.
+## Key Features
 
-- [x] Serve the Wiki as a static website.
+- Create wikis from Markdown directories
+- Full GitHub-Flavored Markdown support
+- Serve as static website with live preview
+- Cross-platform (Windows, macOS, Linux)
 
-- [ ] Use as a Github Action.
+## Documentation
 
-## Quick Start
-
-```bash
-# Clone the repository
-git clone https://github.com/Rethunk-Tech/wiki2go.git
-cd wiki2go
-
-# Build the binary locally
-go install ./cmd/wiki2go
-
-# Run the binary
-wiki2go --help
-```
-
-## Usage
-
-```bash
-# Create a new Wiki-based project.
-wiki2go new my-wiki
-
-# Open the Wiki's contents in your default editor.
-wiki2go edit
-
-# Serve the Wiki. (Open in your default browser.)
-wiki2go serve --open
-```
+| Document | Audience | Content |
+|----------|----------|---------|
+| [AGENTS.md](./AGENTS.md) | Developers | Build, test, extend; architecture; contribution guidelines |
+| [HUMANS.md](./HUMANS.md) | Users & Operators | Installation, usage, deployment, configuration |
+| [SECURITY.md](./SECURITY.md) | Security Reviewers | Vulnerability reporting, threat model, security practices |
 
 ## License
 
-This repository's binaries and source code are provided under the:  
 [GNU Affero General Public License (AGPL)](LICENSE)
