@@ -6,7 +6,7 @@ require (
 	github.com/13rac1/goldmark-embed v0.0.0-20201220231550-e6806f2de66a
 	github.com/AlbinoGeek/logxi v0.0.0-20200425095309-d0ab8e34db2d
 	github.com/adrg/frontmatter v0.2.0
-	github.com/fsnotify/fsnotify v1.10.0
+	github.com/fsnotify/fsnotify v1.10.1
 	github.com/labstack/echo/v4 v4.15.2
 	github.com/spf13/cobra v1.10.2
 	github.com/spf13/pflag v1.0.10
