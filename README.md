@@ -1,6 +1,6 @@
 # Wiki2go
 
-A Go CLI tool for creating self-contained wikis from Markdown files with GitHub-Flavored Markdown support and static website serving.
+A Go CLI tool for creating self-contained wikis from Markdown files with GitHub-Flavored Markdown support and static website serving. It is tuned for portable, repo-backed documentation sites.
 
 ## Key Features
 
