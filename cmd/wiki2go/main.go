@@ -214,7 +214,9 @@ func serveRun(cmd *cobra.Command, args []string) {
 
 	if watchMode {
 		watch(includePaths, excludePaths)
-		defer watcher.Close()
+		defer func() {
+			_ = watcher.Close()
+		}()
 	}
 
 	e.GET("/", func(c echo.Context) error {
@@ -322,7 +324,9 @@ func (s *Server) render(c echo.Context, file *KnownFile) error {
 			"file":  file.Path,
 		})
 	}
-	defer f.Close()
+	defer func() {
+		_ = f.Close()
+	}()
 
 	var meta map[string]interface{}
 	content, err := frontmatter.Parse(f, &meta)
@@ -398,7 +402,7 @@ func scanForKnownFiles(path string) {
 	}
 
 	// replace with filepath.WalkDir
-	filepath.WalkDir(path, func(p string, i os.DirEntry, e error) error {
+	if err := filepath.WalkDir(path, func(p string, i os.DirEntry, e error) error {
 		if e != nil {
 			return e
 		}
@@ -422,7 +426,9 @@ func scanForKnownFiles(path string) {
 			if err != nil {
 				return err
 			}
-			defer f.Close()
+			defer func() {
+				_ = f.Close()
+			}()
 
 			// Read the CSS
 			css, err := io.ReadAll(f)
@@ -445,7 +451,9 @@ func scanForKnownFiles(path string) {
 		if err != nil {
 			return err
 		}
-		defer f.Close()
+		defer func() {
+			_ = f.Close()
+		}()
 
 		// Parse frontmatter and/or document title
 		var meta map[string]interface{}
@@ -480,7 +488,9 @@ func scanForKnownFiles(path string) {
 			Title: makeNamePretty(title),
 		})
 		return nil
-	})
+	}); err != nil {
+		log.Error("failed to walk path", "error", err, "path", path)
+	}
 }
 
 var watcher *fsnotify.Watcher
