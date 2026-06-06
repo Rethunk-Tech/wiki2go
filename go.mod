@@ -22,6 +22,7 @@ require (
 	github.com/BurntSushi/toml v1.6.0 // indirect
 	github.com/forPelevin/gomoji v1.4.1 // indirect
 	github.com/inconshreveable/mousetrap v1.1.0 // indirect
+	github.com/kr/pretty v0.3.1 // indirect
 	github.com/labstack/gommon v0.5.0 // indirect
 	github.com/mattn/go-colorable v0.1.15 // indirect
 	github.com/mattn/go-isatty v0.0.22 // indirect
